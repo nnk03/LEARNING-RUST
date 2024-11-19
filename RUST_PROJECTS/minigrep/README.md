@@ -45,3 +45,15 @@ logic by moving it into functions in lib.rs
 be small enough to verify its correctness by reading it
 . Let’s rework our program by following this
 process.
+
+In this section, we’ll add the searching
+logic to the minigrep program using the test-driven
+development (TDD) process with the following steps:
+
+1. Write a test that fails and run it to
+   make sure it fails for the reason you expect.
+1. Write or modify just enough code to make the new
+   test pass.
+1. Refactor the code you just added or
+   changed and make sure the tests continue to pass.
+1. Repeat from step 1!
