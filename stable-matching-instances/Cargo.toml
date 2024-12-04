@@ -1,0 +1,7 @@
+[package]
+name = "stable-matching-instances"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+stable_matching = "0.1.0"
