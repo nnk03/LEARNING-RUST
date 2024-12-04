@@ -20,6 +20,8 @@ an interior value. We’ll also discuss reference
 cycles: how they can leak memory and how to
 prevent them.
 
+# Box<T>
+
 Boxes don’t have performance overhead, other than
 storing their data on the heap instead of on the
 stack. But they don’t have many extra
@@ -43,3 +45,12 @@ Rust does deref coercion when it finds types and trait implementations in three 
 1. From &T to &U when T: Deref<Target=U>
 1. From &mut T to &mut U when T: DerefMut<Target=U>
 1. From &mut T to &U when T: Deref<Target=U>
+
+# RC<T>
+
+Note that Rc<T> is only for use
+in single-threaded scenarios. When we discuss concurrency
+
+Via immutable references, Rc<T> allows you to share data between multiple parts of your program for reading only. If Rc<T> allowed you to have multiple mutable references too, you might violate one of the borrowing rules discussed in Chapter 4: multiple mutable borrows to the same place can cause data races and inconsistencies. But being able to mutate data is very useful! In the next section, we’ll discuss the interior mutability pattern and the RefCell<T> type that you can use in conjunction with an Rc<T> to work with this immutability restriction.
+in Chapter 16, we’ll cover how to
+do reference counting in multithreaded programs.
