@@ -1,0 +1,6 @@
+[package]
+name = "state-pattern-blog-post"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
